@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import LoginForm from "./LoginForm.js";
+import LoginForm from "./UserForm.js";
 import { login } from "../store/actions/user";
 
 class LoginFormContainer extends Component {
@@ -28,11 +28,14 @@ class LoginFormContainer extends Component {
 
   render() {
     return (
-      <LoginForm
-        onChange={this.onChange}
-        onSubmit={this.onSubmit}
-        values={this.state}
-      />
+      <div>
+        <h3>Login</h3>
+        <LoginForm
+          onChange={this.onChange}
+          onSubmit={this.onSubmit}
+          values={this.state}
+        />
+      </div>
     );
   }
 }

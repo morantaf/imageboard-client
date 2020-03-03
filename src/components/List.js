@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CreateFormContainer from "./CreateFormContainer";
 import LoginFormContainer from "./LoginFormContainer";
+import SignUpFormContainer from "./SignUpFormContainer";
 
 export default class List extends Component {
   render() {
@@ -9,7 +10,14 @@ export default class List extends Component {
     } else {
       return (
         <div>
-          {!this.props.user ? <LoginFormContainer /> : <CreateFormContainer />}
+          {!this.props.user.user ? (
+            <div>
+              <SignUpFormContainer />
+              <LoginFormContainer />
+            </div>
+          ) : (
+            <CreateFormContainer />
+          )}
           <div>
             {this.props.images.map(image => {
               return (
