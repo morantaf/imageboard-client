@@ -33,8 +33,8 @@ class SignUpFormContainer extends Component {
           onSubmit={this.onSubmit}
           values={this.state}
         />
-        {this.props.user.newUser ? (
-          <p>Thank you for signing up {this.props.user.newUser}</p>
+        {this.props.user.createdUser ? (
+          <p>Thank you for signing up {this.props.user.createdUser}</p>
         ) : null}
       </div>
     );

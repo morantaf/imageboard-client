@@ -10,7 +10,7 @@ export default class List extends Component {
     } else {
       return (
         <div>
-          {!this.props.user.user ? (
+          {!this.props.user.auth ? (
             <div>
               <SignUpFormContainer />
               <LoginFormContainer />

@@ -18,7 +18,7 @@ export default class LoginForm extends Component {
           <label>
             Password :
             <input
-              type="text"
+              type="password"
               name="password"
               placeholder="password"
               value={this.props.values.password}
