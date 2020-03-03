@@ -1,6 +1,6 @@
 import request from "superagent";
 
-const baseUrl = "https://whispering-stream-09691.herokuapp.com/";
+const baseUrl = "https://whispering-stream-09691.herokuapp.com";
 
 const allImages = payload => ({
   type: "ALL_IMAGES",

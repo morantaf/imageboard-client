@@ -1,6 +1,6 @@
 import request from "superagent";
 
-const baseUrl = "https://whispering-stream-09691.herokuapp.com/";
+const baseUrl = "https://whispering-stream-09691.herokuapp.com";
 
 export const getJwt = jwt => {
   console.log("action creater with", jwt);
