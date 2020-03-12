@@ -1,17 +1,25 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getImages } from "../store/actions/images";
-import List from "./List";
+import { getImages, deleteImage } from "../store/actions/images";
+import ImageList from "./ImageList";
 
 class ListContainer extends Component {
   componentDidMount() {
     this.props.getImages();
   }
 
+  destroyImage = id => {
+    this.props.deleteImage(id);
+  };
+
   render() {
     return (
       <div>
-        <List images={this.props.images} user={this.props.user} />
+        <ImageList
+          images={this.props.images}
+          user={this.props.user}
+          destroyImage={this.destroyImage}
+        />
       </div>
     );
   }
@@ -22,6 +30,6 @@ const mapStateToProps = reduxState => ({
   user: reduxState.user
 });
 
-const mapDispatchToProps = { getImages };
+const mapDispatchToProps = { getImages, deleteImage };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListContainer);

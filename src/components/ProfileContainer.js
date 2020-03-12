@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getUniqueUser } from "../store/actions/user";
+import { getUserImages } from "../store/actions/images";
 import Profile from "./Profile";
 
 class ProfileContainer extends Component {
   componentDidMount() {
-    this.props.getUniqueUser(this.props.match.params.id);
+    this.props.getUserImages(this.props.match.params.id);
   }
 
   render() {
@@ -14,17 +15,19 @@ class ProfileContainer extends Component {
     if (!userDisplayed) {
       return <p>loading</p>;
     } else {
-      return <Profile user={userDisplayed} />;
+      return <Profile user={userDisplayed} images={this.props.images} />;
     }
   }
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.user,
+  images: state.images
 });
 
 const mapDispatchToProps = {
-  getUniqueUser
+  getUniqueUser,
+  getUserImages
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
