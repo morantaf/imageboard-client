@@ -1,8 +1,8 @@
 import request from "superagent";
 import { fetchUniqueUser } from "./user";
 
-//const baseUrl = "https://whispering-stream-09691.herokuapp.com";
-const baseUrl = "http://localhost:4000";
+const baseUrl = "https://warm-dusk-67488.herokuapp.com";
+//const baseUrl = "http://localhost:4000";
 
 const allImages = payload => ({
   type: "ALL_IMAGES",
