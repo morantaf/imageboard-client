@@ -16,7 +16,7 @@ class ListContainer extends Component {
     return (
       <div>
         <ImageList
-          images={this.props.images}
+          images={this.props.images.list}
           user={this.props.user}
           destroyImage={this.destroyImage}
         />

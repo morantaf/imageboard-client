@@ -22,7 +22,7 @@ class ProfileContainer extends Component {
 
 const mapStateToProps = state => ({
   user: state.user,
-  images: state.images
+  images: state.images.listByUser
 });
 
 const mapDispatchToProps = {
