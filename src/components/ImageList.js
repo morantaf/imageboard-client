@@ -13,7 +13,7 @@ export default class ImageList extends Component {
             const dateCreation = new Date(image.createdAt);
             const now = new Date();
             const differenceHours = parseInt(
-              (now.getHours() - dateCreation.getHours()) / 3600000
+              dateCreation.getHours() - now.getHours() / 3600000
             );
             return (
               <div key={image.id}>
