@@ -12,7 +12,9 @@ export default class ImageList extends Component {
           {this.props.images.map(image => {
             const dateCreation = new Date(image.createdAt);
             const now = new Date();
-            const differenceHours = now.getHours() - dateCreation.getHours();
+            const differenceHours = parseInt(
+              (now.getHours() - dateCreation.getHours()) / 3600000
+            );
             return (
               <div key={image.id}>
                 <h3>{image.title}</h3>
