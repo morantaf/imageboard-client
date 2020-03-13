@@ -76,11 +76,11 @@ export const deleteImage = id => (dispatch, getState) => {
 export const getUserImages = id => async (dispatch, getState) => {
   const state = getState();
   if (!state.user.userDisplayed) {
-    const response = await request.get(`http://localhost:4000/users/${id}`);
+    const response = await request.get(`${baseUrl}/users/${id}`);
     const action = fetchUniqueUser(response.body);
     dispatch(action);
   }
-  const response = await request.get(`http://localhost:4000/images/user/${id}`);
+  const response = await request.get(`${baseUrl}/images/user/${id}`);
   const action = imagesByUser(response.body);
   dispatch(action);
 };
